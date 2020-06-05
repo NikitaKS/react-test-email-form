@@ -1,0 +1,36 @@
+&.success {
+    width: 580px;
+    .b-title {
+        &+.b-title {
+            &:before {
+                content: '';
+                display: block;
+                margin: 10px auto;
+                width: 100px;
+                height: 1px;
+                background-color: @color1;
+                @media @nb {
+                    margin: 9px auto;
+                }
+                @media @tb {
+                    margin: 8px auto;
+                }
+                @media @mb {
+                    margin: 7px auto;
+                }
+            }
+        }
+    }
+    .success {
+        padding: 120px 20px;
+        @media @nb {
+            padding: 100px 15px;
+        }
+        @media @tb {
+            padding: 80px 15px;
+        }
+        @media @mb {
+            padding: 30px 10px;
+        }
+    }
+}

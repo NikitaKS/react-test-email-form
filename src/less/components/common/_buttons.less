@@ -1,0 +1,55 @@
+.styled-btn {
+    .animate;
+    text-align: center;
+    text-decoration: none!important;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border: 0;
+    //.ff(Panton);
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+    &.styled-btn-1 {
+        border-radius: 25px;
+        padding: 0px 15px;
+        min-height: 50px;
+        min-width: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        background-color: @color4;
+        color: @color1;
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 700;
+        @media @nbtbmb {
+            font-size: 15px;
+            line-height: 15px;
+        }
+        @media @tbmb {
+            min-width: 280px;
+            min-height: 45px;
+            border-radius: 22.5px;
+            box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.3);
+        }
+        @media @mb {
+            min-width: inherit;
+            width: 100%;
+        }
+        &:after {
+            content:'';
+            min-height:inherit;
+            font-size:0;
+        }
+    }
+    &.styled-btn-1 {
+        &:hover {
+            background-color: darken(@color4, 7%);
+        }
+    }
+}

@@ -1,0 +1,36 @@
+#footer {
+    flex: 0 0 auto;
+    background-color: @color4;
+    .in {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media @mb {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+    .site-logo {
+        @media @mb {
+            width: 100%;
+            order: 1;
+        }
+    }
+    .copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        @media @mb {
+            order: 2;
+            margin-top: 15px;
+            align-items: flex-start;
+        }
+        a {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

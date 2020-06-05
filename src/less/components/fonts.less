@@ -1,0 +1,19 @@
+//<font_family> | <file_name> | <local_name> | <font_weight> | <font_style>
+@fonts: 'Panton' 'Panton-Light' 'Panton Light' 300 normal,
+        'Panton' 'Panton-Regular' 'Panton Regular' normal normal,
+        'Panton' 'Panton-RegularItalic' 'Panton Regular Italic' normal italic,
+        'Panton' 'Panton-SemiBold' 'Panton SemiBold' 600 normal,
+        'Panton' 'Panton-Bold' 'Panton Bold' 700 normal,
+        'Panton' 'Panton-BoldItalic' 'Panton Bold Italic' 700 italic,
+        'BadScript' 'BadScript-Regular' 'Bad Script Regular' normal normal
+;
+
+.add-ff(@fonts);
+
+.ff(@type: Panton) when (@type =Panton) {
+    font-family: 'Panton', sans-serif;
+}
+
+.ff(@type: BadScript) when (@type =BadScript) {
+    font-family: 'BadScript';
+}

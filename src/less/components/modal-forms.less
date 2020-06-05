@@ -1,0 +1,93 @@
+.modal-form-wrapper {
+    overflow: auto;
+    height: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(33,33,33, 0.9);
+    cursor: pointer;
+    display: none;
+    padding: 50px 10px 10px 10px;
+    @media @nb {
+        padding: 42px 10px 10px 10px;
+    }
+    @media @tbmb {
+        padding: 40px 10px 10px 10px;
+    }
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em;
+    }
+    .modal-form {
+        cursor: default;
+        text-align: left;
+        display: inline-block;
+        vertical-align: middle;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        background-color: @color2;
+        @media @nb {
+            border-radius: 7px;
+        }
+        @media @tbmb {
+            border-radius: 5px;
+        }
+        @media @mb {
+            width: 100%!important;
+        }
+        .content {
+            position: relative;    
+            padding: 10px;        
+            a.close {
+                height: 30px;
+                width: 30px;
+                position: absolute;
+                bottom: 100%;
+                right: 0;
+                cursor: pointer;
+                .animate;
+                opacity: 1;
+                margin-bottom: 10px;
+                @media @nb {
+                    height: 22px;
+                    width: 22px;
+                }
+                @media @tbmb {
+                    right: 0;
+                    height: 20px;
+                    width: 20px;
+                }
+                svg {
+                    display: block;
+                    fill: @color2;
+                    width: 100%;
+                    height: 100%;
+                }
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+            .live-content {
+                border-radius: 6px;
+                border: 1px solid @color1;
+                background-color: @color2;
+                overflow: hidden;   
+                @media @nb {
+                    border-radius: 5px;
+                }             
+                @media @tbmb {
+                    border-radius: 3px;
+                }
+            }
+        }
+        @import "modals/cb-form-modal.less";
+        @import "modals/success-modal.less";
+        @import "modals/map-modal.less";
+    }
+}

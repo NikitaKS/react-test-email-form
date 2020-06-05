@@ -1,0 +1,19 @@
+.tabs-wrapper {
+    > .tabs-controls {
+        display: flex;
+        > .item {
+            cursor: pointer;
+            &.active {
+                cursor: default;
+            }
+        }
+    }
+    > .tabs-content {
+        > .item {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

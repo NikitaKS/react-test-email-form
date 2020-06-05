@@ -1,0 +1,42 @@
+.block-margin {
+    margin: 60px 0px 70px 0px;
+    @media @nb {
+        margin: 50px 0px 60px 0px;
+    }
+    @media @tb {
+        margin: 40px 0px 45px 0px;
+    }
+    @media @mb {
+        margin: 30px 0px 35px 0px;
+    }
+    &.no-margin-top {
+        margin-top: 0;
+    }
+    &.no-margin-bottom {
+        margin-bottom: 0;
+    }
+    &.only-margin-top {
+        margin-top: 60px;
+        @media @nb {
+            margin-top: 50px;
+        }
+        @media @tb {
+            margin-top: 40px;
+        }
+        @media @mb {
+            margin-top: 30px;
+        }
+    }
+    &.only-margin-bottom {
+        margin-bottom: 70px;
+        @media @nb {
+            margin-bottom: 60px;
+        }
+        @media @tb {
+            margin-bottom: 45px;
+        }
+        @media @mb {
+            margin-bottom: 35px;
+        }
+    }
+}
