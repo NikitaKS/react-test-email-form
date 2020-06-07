@@ -2,6 +2,8 @@ import {AppStateType, InferActionsTypes} from "./store";
 import {ResultCodesEnum} from './types'
 import {ThunkAction} from "redux-thunk";
 import {commonAsyncHandler} from "../dal/common-async-handler";
+import {emailAPI} from "../dal/api";
+import {MailFormData} from "../components/email-form/email-form";
 
 export enum RequestStatus {
     NotInit = 0,
@@ -53,16 +55,11 @@ export const isInit = (): ThunkActionType => async (dispatch) => {
     // await dispatch(authMe())
 }
 
-export const authMe = (): ThunkActionType => async (dispatch, getState) => {
+export const sendMail = (formData:MailFormData): ThunkActionType => async (dispatch, getState) => {
     await commonAsyncHandler(async () => {
-        // const response = await authAPI.authMe()
-        // if (response.resultCode === ResultCodesEnum.Success) {
-        //     dispatch(actions.setUser(response.data))
-        //     dispatch(actions.setToken(response.accessToken))
-        // } else {
-        //     dispatch(actions.setUser(null))
-        // }
-        // return response
+        const response = await emailAPI.sendMail(formData)
+
+        return response
     }, dispatch);
 }
 

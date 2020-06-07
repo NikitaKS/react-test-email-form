@@ -1,12 +1,29 @@
 import React, {FC} from 'react';
+import EmailForm, {MailFormData} from "./email-form";
+import {useDispatch, useSelector} from "react-redux";
+import {sendMail} from "../../redux/app-reducer";
+import {AppStateType} from "../../redux/store";
 
 const EmailFormContainer: FC = () => {
+    const dispatch = useDispatch()
+    const {requestStatus} = useSelector((state: AppStateType) => state.app)
+
+    const sendEmail = (formData: MailFormData) => {
+        dispatch(sendMail(formData))
+    }
+
     return (
         <div className='email-form-wrapper'>
             <div className="container">
                 <div className="email-form-in">
                     <div className="left">
-
+                        <div className="top-block">
+                            <span>Get in touch</span>
+                            <span>Let us know <br/> how we can help</span>
+                        </div>
+                        <div className="form-block">
+                            <EmailForm sendEmail={sendEmail} requestStatus={requestStatus}/>
+                        </div>
                     </div>
                     <div className="right">
                         <div className="info-block">

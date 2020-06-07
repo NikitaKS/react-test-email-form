@@ -6,23 +6,117 @@
   &-in {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     .left {
+      width: 450px;
+      background-color: #ccddec;
+      padding: 5px;
+      border-radius: 8px;
+
+      .top-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        span:first-child {
+          font-weight: bold;
+        }
+      }
+
+      .form-block {
+        padding-top: 50px;
+      }
+
     }
 
     .right {
       width: 450px;
       padding: 35px;
-      margin-right: 100px;
       background-color: #fff;
       border-radius: 8px;
-      box-sizing: border-box;
       color: black;
-      .title{
+      text-align: left;
+
+      .title {
         font-weight: bold;
       }
-      .body{}
+
+      .body {
+      }
+    }
+  }
+}
+
+
+//FORM
+
+.email-form {
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .form-item {
+      width: 100%;
+
+      & + .form-item {
+        margin-top: 15px;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 20px;
+        color: #fff;
+        background-color: #0056dd;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        outline: none;
+        box-sizing: border-box;
+        resize: none;
+
+        &:focus {
+          background-color: hsla(0, 0%, 100%, .2);
+        }
+      }
+    }
+
+    .button-block {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+
+      img {
+        display: block;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  button {
+    background-color: @colorEmailBtn;
+    display: inline-block;
+    border-radius: 32px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    -webkit-transition: box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 18px 80px 14px;
+
+    &:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+    }
+
+    &[disabled=disabled], &:disabled {
+      background-color: hsla(0, 0%, 100%, .2);;
     }
   }
 }
