@@ -5,13 +5,17 @@
   max-height: 420px;
   padding: 35px;
   background-color: #fff;
-  position: absolute;
+  position: fixed;
   left: calc(50% - 225px);
   top: calc(50% - 210px);
   z-index: 2;
   color: #000;
   border-radius: 8px;
   overflow-x: auto;
+  @media @tbmb{
+    max-width: calc(100% - 20px);
+    left: 10px;
+  }
 
   .title {
     font-size: 26px;
