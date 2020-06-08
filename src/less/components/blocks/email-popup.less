@@ -1,0 +1,57 @@
+.pop-up {
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 450px;
+  max-height: 420px;
+  padding: 35px;
+  background-color: #fff;
+  position: absolute;
+  left: calc(50% - 225px);
+  top: calc(50% - 210px);
+  z-index: 2;
+  color: #000;
+  border-radius: 8px;
+  overflow-x: auto;
+
+  .title {
+    font-size: 26px;
+    line-height: 32px;
+    text-align: left;
+    font-family: Circe, sans-serif;
+    font-weight: 600;
+
+  }
+
+  .body {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: HelveticaNeue, sans-serif;
+
+
+    span {
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+    a{
+      color: #006ef1;
+      text-decoration: none;
+      outline: none;
+    }
+  }
+
+  .btn {
+    .styled-btn-mad;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1;
+}

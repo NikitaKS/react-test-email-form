@@ -1,4 +1,4 @@
-import {MailFormData} from "../components/email-form/email-form";
+import {MailFormData} from "../components/email-form/emailForm";
 import {instance} from "../redux/constants";
 
 

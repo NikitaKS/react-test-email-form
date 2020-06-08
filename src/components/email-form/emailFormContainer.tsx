@@ -1,15 +1,20 @@
 import React, {FC} from 'react';
-import EmailForm, {MailFormData} from "./email-form";
+import EmailForm, {MailFormData} from "./emailForm";
 import {useDispatch, useSelector} from "react-redux";
-import {sendMail} from "../../redux/app-reducer";
+import {actions, OperationStatus, sendMail} from "../../redux/app-reducer";
 import {AppStateType} from "../../redux/store";
+import EmailFormPopUp from "../pop-ups/emailFormPopUp";
 
 const EmailFormContainer: FC = () => {
     const dispatch = useDispatch()
-    const {requestStatus} = useSelector((state: AppStateType) => state.app)
+    const {requestStatus, popUpStatus} = useSelector((state: AppStateType) => state.app)
 
     const sendEmail = (formData: MailFormData) => {
         dispatch(sendMail(formData))
+    }
+
+    const closePopUp = () => {
+        dispatch(actions.setPopUpStatus(OperationStatus.Closed))
     }
 
     return (
@@ -35,7 +40,6 @@ const EmailFormContainer: FC = () => {
                                     NDA,
                                     please let us know. We’ll prepare it for you.
                                 </span>
-
                                 <span>
                                     Since we live on two different continents (Australia and Europe) we are available
                                     around
@@ -46,6 +50,10 @@ const EmailFormContainer: FC = () => {
                     </div>
                 </div>
             </div>
+            {
+                popUpStatus === OperationStatus.InProgress &&
+                <EmailFormPopUp closePopUp={closePopUp}/>
+            }
         </div>
     )
 };

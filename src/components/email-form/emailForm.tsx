@@ -1,7 +1,6 @@
 import React, {FC, useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {RequestStatus} from "../../redux/app-reducer";
-import Preloader from '../../assets/Preloader.svg';
 
 type PropsType = {
     sendEmail: (formData: MailFormData) => void
@@ -15,7 +14,7 @@ export type MailFormData = {
 };
 
 const EmailForm: FC<PropsType> = ({requestStatus, sendEmail}) => {
-    const {register, handleSubmit, errors, reset} = useForm<MailFormData>();
+    const {register, handleSubmit, reset} = useForm<MailFormData>();
     const onSubmit = handleSubmit((data) => {
         sendEmail(data)
     });
@@ -28,25 +27,27 @@ const EmailForm: FC<PropsType> = ({requestStatus, sendEmail}) => {
         <div className='email-form'>
             <form onSubmit={onSubmit} className='form'>
                 <div className='form-item'>
-                    <input placeholder='Name' type={'text'} name="name" required={!!errors.name}
+                    <input placeholder='Name' autoComplete={'off'} type={'text'} name="name" required={true}
                            ref={register({required: true})}/>
                 </div>
                 <div className='form-item'>
-                    <input placeholder='E-mail' type={'email'} name="email" required={!!errors.email}
+                    <input placeholder='E-mail' autoComplete={'off'} type={'email'} name="email" required={true}
                            ref={register({required: true})}/>
                 </div>
                 <div className='form-item'>
-                    <textarea placeholder='Message' name="message" required={!!errors.message}
+                    <textarea placeholder='Message' autoComplete={'off'} name="message" required={true}
                               ref={register({required: true})}/>
                 </div>
                 <div className='button-block'>
-                    <button type="submit" disabled={requestStatus === RequestStatus.Loading}>
-                        SEND
+                    <button className='btn' type="submit" disabled={requestStatus === RequestStatus.Loading}>
+                        {
+                            requestStatus === RequestStatus.Loading
+                                ?
+                                'SENDING...'
+                                :
+                                'SEND'
+                        }
                     </button>
-                    {
-                        requestStatus === RequestStatus.Loading &&
-                        <img src={Preloader} alt="Loading..."/>
-                    }
                 </div>
             </form>
         </div>
