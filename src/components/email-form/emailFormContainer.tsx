@@ -29,12 +29,18 @@ const EmailFormContainer: FC = () => {
                         <div className="info-block">
                             <div className="title">What's next</div>
                             <div className="body">
-                                We’ll contact you within a few hours with our next steps. We normally schedule a call
-                                with our engineers to discuss your project in more detail. If you’d like to sign an NDA,
-                                please let us know. We’ll prepare it for you.
+                                <span>
+                                    We’ll contact you within a few hours with our next steps. We normally schedule a call
+                                    with our engineers to discuss your project in more detail. If you’d like to sign an
+                                    NDA,
+                                    please let us know. We’ll prepare it for you.
+                                </span>
 
-                                Since we live on two different continents (Australia and Europe) we are available around
-                                the clock.
+                                <span>
+                                    Since we live on two different continents (Australia and Europe) we are available
+                                    around
+                                    the clock.
+                                </span>
                             </div>
                         </div>
                     </div>

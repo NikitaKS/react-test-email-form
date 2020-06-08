@@ -32,7 +32,7 @@ const EmailForm: FC<PropsType> = ({requestStatus, sendEmail}) => {
                            ref={register({required: true})}/>
                 </div>
                 <div className='form-item'>
-                    <input placeholder='Email' type={'email'} name="email" required={!!errors.email}
+                    <input placeholder='E-mail' type={'email'} name="email" required={!!errors.email}
                            ref={register({required: true})}/>
                 </div>
                 <div className='form-item'>

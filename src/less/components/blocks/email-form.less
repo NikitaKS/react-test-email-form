@@ -1,6 +1,7 @@
 .email-form {
   &-wrapper {
-    padding-top: 50px;
+    padding-top: 100px;
+    font-family: Circe, sans-serif;
   }
 
   &-in {
@@ -10,17 +11,20 @@
 
     .left {
       width: 450px;
-      background-color: #ccddec;
-      padding: 5px;
       border-radius: 8px;
 
       .top-block {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        font-size: 1.33em;
+        line-height: 1.33em;
+        text-align: left;
 
         span:first-child {
           font-weight: bold;
+          font-size: 2em;
+          line-height: 1.22222em;
         }
       }
 
@@ -37,12 +41,28 @@
       border-radius: 8px;
       color: black;
       text-align: left;
+      font-size: 1.444em;
+      margin-right: 100px;
+      margin-top: 106px;
 
       .title {
         font-weight: bold;
+        line-height: 1.23em;
       }
 
       .body {
+        margin-top: 15px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: HelveticaNeue, sans-serif;
+
+        span {
+          display: inline-block;
+
+          & + span {
+            margin-top: 30px;
+          }
+        }
       }
     }
   }
@@ -71,14 +91,27 @@
         background-color: #0056dd;
         border: none;
         border-radius: 8px;
-        font-weight: 500;
+        font-weight: 600;
         outline: none;
         box-sizing: border-box;
         resize: none;
+        font-family: HelveticaNeue, sans-serif;
+        font-size: 18px;
 
         &:focus {
           background-color: hsla(0, 0%, 100%, .2);
         }
+
+        &::placeholder {
+          font-family: HelveticaNeue, sans-serif;
+          color: #6798E5;
+          font-weight: 600;
+          font-size: 18px;
+        }
+      }
+
+      textarea {
+        min-height: 120px;
       }
     }
 
